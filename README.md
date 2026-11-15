@@ -21,16 +21,16 @@ The API seeds a few example tasks when the MongoDB `tasks` collection is empty. 
 
 ## Project structure
 
-- `src/pages/` contains the welcome, dashboard, task, and utility screens.
-- `src/components/` contains shared UI elements such as task lists, forms, navigation, and icons.
-- `src/utils/` contains the frontend API client and date helpers.
-- `server/models/`, `server/controllers/`, and `server/routes/` follow the MVC pattern for task data and API endpoints.
-- `server/config/` and `server/app.js` handle MongoDB connection and Express setup.
-- `api/[...path].js` adapts the Express API for Vercel serverless deployment.
+- `frontend/src/pages/` contains the welcome, dashboard, task, and utility screens.
+- `frontend/src/components/` contains shared UI elements such as task lists, forms, navigation, and icons.
+- `frontend/src/utils/` contains the frontend API client and date helpers.
+- `backend/server/models/`, `backend/server/controllers/`, and `backend/server/routes/` follow the MVC pattern for task data and API endpoints.
+- `backend/server/config/` and `backend/server/app.js` handle MongoDB connection and Express setup.
+- `backend/api/[...path].js` adapts the Express API for Vercel; `api/[...path].js` is its root deployment entry point.
 
 ## Deploy to Vercel
 
 1. Create a MongoDB Atlas cluster and configure its network access for your Vercel deployment.
-2. Import this repository into Vercel. The included `vercel.json` builds the Vite app into `dist`; `api/[...path].js` serves the Express API.
+2. Import this repository into Vercel. The included `vercel.json` builds the Vite app into `frontend/dist`; `api/[...path].js` serves the Express API.
 3. Add `MONGO_URI` in Vercel **Project Settings → Environment Variables** using the Atlas connection string. Set `MONGO_DB` to `daybook` if you want to choose the database explicitly.
 4. Deploy. The frontend calls the API through relative `/api` URLs, so no separate frontend API URL is needed.
