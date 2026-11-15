@@ -3,7 +3,6 @@ import babel from '@rolldown/plugin-babel'
 import { defineConfig } from 'vite'
 import { fileURLToPath } from 'node:url'
 
-// https://vite.dev/config/
 export default defineConfig({
   root: fileURLToPath(new URL('.', import.meta.url)),
   plugins: [
@@ -12,7 +11,7 @@ export default defineConfig({
   ],
   server: {
     proxy: {
-      '/api': 'http://127.0.0.1:3001',
+      '/api': 'https://backend-xi-teal-81.vercel.app/',
     },
   },
 })
