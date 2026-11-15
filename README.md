@@ -32,7 +32,13 @@ For a non-watching backend process, run `npm --prefix backend start`. The root `
 
 ## Deploy to Vercel
 
-1. Create a MongoDB Atlas cluster and configure its network access for your Vercel deployment.
-2. Import this repository into Vercel. The included `vercel.json` builds the Vite app into `frontend/dist`; `api/[...path].js` serves the Express API.
-3. Add `MONGO_URI` in Vercel **Project Settings → Environment Variables** using the Atlas connection string. Set `MONGO_DB` to `daybook` if you want to choose the database explicitly.
-4. Deploy. The frontend calls the API through relative `/api` URLs, so no separate frontend API URL is needed.
+Deploy the frontend and backend together as **one Vercel project**:
+
+1. Import this repository and keep **Root Directory** set to `.` (the repository root), not `frontend` or `backend`.
+2. Use these **Build and Output Settings**:
+   - Framework Preset: `Vite`
+   - Build Command: `npm run build`
+   - Output Directory: `frontend/dist`
+   - Install Command: `npm install`
+3. Add `MONGO_URI` under **Project Settings → Environment Variables**. Optionally set `MONGO_DB` (defaults to `daybook`).
+4. Deploy. Vercel serves the frontend and the API route from the same domain, so no separate backend deployment or frontend API URL/CORS configuration is needed.
