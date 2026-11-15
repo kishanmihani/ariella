@@ -8,7 +8,7 @@ A responsive task planner with a React/Vite frontend and a Node.js API backed by
 2. In one terminal, start the API:
 
    ```powershell
-   npm run server
+   npm --prefix backend run dev
    ```
 
 3. In a second terminal, start the frontend:
@@ -18,6 +18,8 @@ A responsive task planner with a React/Vite frontend and a Node.js API backed by
    ```
 
 The API seeds a few example tasks when the MongoDB `tasks` collection is empty. The Vite development server proxies `/api` requests to the Node API on port `3001`.
+
+For a non-watching backend process, run `npm --prefix backend start`. The root `npm run server` command remains available as well.
 
 ## Project structure
 

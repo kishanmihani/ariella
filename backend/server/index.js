@@ -1,6 +1,14 @@
-import 'dotenv/config'
-import app from './app.js'
-import { closeDatabase, connectDatabase } from './config/database.js'
+import dotenv from 'dotenv'
+import { dirname, resolve } from 'node:path'
+import { fileURLToPath } from 'node:url'
+
+const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), '../..')
+dotenv.config({ path: resolve(projectRoot, '.env') })
+
+const [{ default: app }, { closeDatabase, connectDatabase }] = await Promise.all([
+  import('./app.js'),
+  import('./config/database.js'),
+])
 
 const port = Number(process.env.API_PORT || 3001)
 
