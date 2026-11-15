@@ -1,6 +1,6 @@
 import type { Task, TaskForm } from '../types/task'
 
-const API_URL = 'https://backend-xi-teal-81.vercel.app/api/tasks'
+const API_URL = '/api/tasks'
 
 async function request<T>(url: string, init?: RequestInit): Promise<T> {
   const response = await fetch(url, init)
