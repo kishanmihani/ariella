@@ -2,7 +2,8 @@ import type { Task } from '../types/task'
 import { getTodayIsoDate, getWeekDates } from '../utils/taskDate'
 import { Icon } from '../components/Icon'
 import { TaskList } from '../components/TaskList'
-
+import completeimg from "../assets/Group 38.png"
+import notcompleteimg from "../assets/Group 39.png"
 type TaskActions = {
   onToggle: (task: Task) => void
   onSelect: (task: Task) => void
@@ -74,11 +75,11 @@ export function DashboardPage({
       </div>
       <section className="stats-grid" aria-label="Weekly task summary">
         <div className="stat-card completed-stat">
-          <span className="stat-icon"><Icon name="check" size={19} /></span>
+          <span className="stat-icon"><img src={completeimg} alt="Completed tasks" /></span>
           <div><span className="stat-label">Task complete</span><strong>{String(completedCount).padStart(2, '0')}</strong><span className="stat-caption">This week</span></div>
         </div>
         <div className="stat-card pending-stat">
-          <span className="stat-icon"><Icon name="close" size={19} /></span>
+          <span className="stat-icon"><img src={notcompleteimg} alt="Pending tasks" /></span>
           <div><span className="stat-label">Task pending</span><strong>{String(pendingCount).padStart(2, '0')}</strong><span className="stat-caption">This week</span></div>
         </div>
       </section>
