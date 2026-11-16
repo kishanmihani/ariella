@@ -11,7 +11,7 @@ npm install
 npm run dev
 ```
 
-Task data comes from the hosted API configured by `VITE_API_URL`. The API must allow requests from the frontend's origin.
+Task data comes from the hosted API. In development, Vite proxies `/api` to the backend; on Vercel, the `/api` rewrite does the same. Leave `VITE_API_URL` unset to use these same-origin proxies. If you set it to a different API origin, that API must allow requests from the frontend's origin.
 
 ## Project structure
 
@@ -36,4 +36,4 @@ Deploy this frontend as one Vercel project from the repository root:
    - Build Command: `npm run build`
    - Output Directory: `dist`
    - Install Command: `npm install`
-3. Set `VITE_API_URL` to the hosted API origin. Ensure the API allows the deployed frontend's origin, then deploy.
+3. Leave `VITE_API_URL` unset to use the configured same-origin API rewrite, then deploy.
