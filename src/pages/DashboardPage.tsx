@@ -35,20 +35,20 @@ export function DashboardPage({
   onCreate,
   onSearch,
   onViewAll,
-  onSettings,
+  // onSettings,
 }: DashboardPageProps) {
   const progress = tasks.length ? Math.round((completedCount / tasks.length) * 100) : 0
 
   return (
     <main className="page-content">
-      <div className="home-topline">
-        <div>
+   {/*    <div className="home-topline">
+      {/*   <div>
           <p className="eyebrow">{new Date().toLocaleDateString('en', { weekday: 'long', month: 'long', day: 'numeric' }).toUpperCase()}</p>
           <h1>Good morning<span className="wave"> ✨</span></h1>
           <p className="page-subtitle">Let’s make today a good one.</p>
         </div>
         <button className="avatar" aria-label="Open settings" onClick={onSettings}>A</button>
-      </div>
+      </div> */}
       <div className="search-control" onClick={onSearch}>
         <Icon name="search" size={21} />
         <input aria-label="Search tasks" placeholder="Search for a task" value={query} readOnly />
