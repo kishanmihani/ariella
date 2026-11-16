@@ -40,7 +40,7 @@ export function DashboardPage({
   const progress = tasks.length ? Math.round((completedCount / tasks.length) * 100) : 0
 
   return (
-    <main className="page-content">
+    <main className="page-content ">
    {/*    <div className="home-topline">
       {/*   <div>
           <p className="eyebrow">{new Date().toLocaleDateString('en', { weekday: 'long', month: 'long', day: 'numeric' }).toUpperCase()}</p>
