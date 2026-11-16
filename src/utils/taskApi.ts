@@ -1,6 +1,7 @@
 import type { Task, TaskForm } from '../types/task'
 
-const API_URL = '/api/tasks'
+const API_ORIGIN = import.meta.env.VITE_API_URL || 'https://backend-xi-teal-81.vercel.app'
+const API_URL = `${API_ORIGIN.replace(/\/+$/, '')}/api/tasks`
 
 async function request<T>(url: string, init?: RequestInit): Promise<T> {
   const response = await fetch(url, init)

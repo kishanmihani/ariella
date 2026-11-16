@@ -1,5 +1,5 @@
 import { Icon } from '../components/Icon'
-
+import banner from "../assets/banner.png"
 type WelcomePageProps = {
   onStart: () => void
 }
@@ -8,11 +8,12 @@ export function WelcomePage({ onStart }: WelcomePageProps) {
   return (
     <main className="welcome-screen">
       <div className="welcome-art" aria-hidden="true">
-        <div className="art-ring ring-one" />
+        <img src={banner} alt={banner} className='h-[100%] w-[100%]' />
+        {/* <div className="art-ring ring-one" />
         <div className="art-ring ring-two" />
         <div className="art-check"><Icon name="check" size={54} /></div>
         <div className="art-sparkle sparkle-one">✳</div>
-        <div className="art-sparkle sparkle-two">✳</div>
+        <div className="art-sparkle sparkle-two">✳</div> */}
       </div>
       <div className="welcome-copy">
         <span className="brand-mark"><Icon name="check" size={15} /></span>
