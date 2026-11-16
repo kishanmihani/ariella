@@ -40,11 +40,11 @@ export function DashboardPage({
   const progress = tasks.length ? Math.round((completedCount / tasks.length) * 100) : 0
 
   return (
-    <main className="page-content ">
+    <main className="page-content">
    {/*    <div className="home-topline">
       {/*   <div>
           <p className="eyebrow">{new Date().toLocaleDateString('en', { weekday: 'long', month: 'long', day: 'numeric' }).toUpperCase()}</p>
-          <h1>Good morning<span className="wave"> ✨</span></h1>
+          <h1>Good morning<span className="wave"> </span></h1>
           <p className="page-subtitle">Let’s make today a good one.</p>
         </div>
         <button className="avatar" aria-label="Open settings" onClick={onSettings}>A</button>
